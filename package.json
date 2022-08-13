@@ -1,0 +1,32 @@
+{
+  "name": "offline-class",
+  "version": "1.0.0",
+  "description": "offline-class",
+  "main": "index.js",
+  "dependencies": {
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "style-dictionary": "^3.7.1",
+    "token-transformer": "^0.0.24"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "theme:token": "run-p global light dark",
+    "theme:create": "node build-theme.js",
+    "theme:delete": "rimraf -rf theme",
+    "global": "token-transformer data/tokens.json theme/global.json global",
+    "light": "token-transformer data/tokens.json theme/light.json global,light global",
+    "dark": "token-transformer data/tokens.json theme/dark.json global,dark global"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Limelig/offline-class.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Limelig/offline-class/issues"
+  },
+  "homepage": "https://github.com/Limelig/offline-class#readme"
+}
